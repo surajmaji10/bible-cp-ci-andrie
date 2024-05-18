@@ -34,7 +34,7 @@ void primeFactorization(int n, int primesfactors[], int expos[]){
             n = n / div;
             factors++;
             TOTAL_FACTORS++;
-             allfactors[TOTAL_FACTORS] = div;
+            allfactors[TOTAL_FACTORS] = div;
         }
         if(factors > 0){
             NUM_FACTORS++;
@@ -42,6 +42,15 @@ void primeFactorization(int n, int primesfactors[], int expos[]){
             expos[NUM_FACTORS] = factors;
         }
         div += 2;
+    }
+
+    if(n > 1){ /*n was a prime itself*/
+            TOTAL_FACTORS++;
+            allfactors[TOTAL_FACTORS] = n;
+
+            NUM_FACTORS++;
+            primesfactors[NUM_FACTORS] = n;
+            expos[NUM_FACTORS] = 1;
     }
 }
 

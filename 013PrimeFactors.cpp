@@ -22,12 +22,19 @@ void primeFactorization(int n, int primesfactors[], int expos[]){
             TOTAL_FACTORS++;
         }
         if(factors > 0){
-            cout << "Hi\n";
             NUM_FACTORS++;
             primesfactors[NUM_FACTORS] = div;
             expos[NUM_FACTORS] = factors;
         }
         div++;
+    }
+
+    if(n > 1){ /*n was a prime itself*/
+            TOTAL_FACTORS++;
+
+            NUM_FACTORS++;
+            primesfactors[NUM_FACTORS] = n;
+            expos[NUM_FACTORS] = 1;
     }
 }
 
