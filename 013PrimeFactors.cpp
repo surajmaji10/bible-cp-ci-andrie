@@ -6,7 +6,7 @@ int primesfactors[PRIMES_FACTORS_LIMIT + 1] {1};
 int expos[PRIMES_FACTORS_LIMIT + 1] {0};
 int NUM_FACTORS = 0;
 int TOTAL_FACTORS = 0;
-void primeFactorization(int n, int primesfactors[], int expos[]){
+void primeFactorization(int n, int primesfactors[], int expos[]){ // workd for n > 1
     /*initial values*/
     NUM_FACTORS = 0;
     TOTAL_FACTORS = 0;
