@@ -7,18 +7,22 @@ int allfactors[PRIMES_FACTORS_LIMIT + 1] {1};
 int expos[PRIMES_FACTORS_LIMIT + 1] {1};
 int NUM_FACTORS = 0;
 int TOTAL_FACTORS = 0;
-void primeFactorization(int n, int primesfactors[], int expos[]){ // workd for n > 1
+void primeFactorization(int n, int primesfactors[], int expos[]){ // works for n > 1
     /*initial values*/
     NUM_FACTORS = 0;
     TOTAL_FACTORS = 0;
-    primesfactors[0] = (n==0)?0:1;
+    primesfactors[0] = 1;
     expos[0] = 1;
+    allfactors[0] = 1;
     if(n == 0){
         /*
-        If n==0 then ans is 0^1
+        If n==0 then ans is 0^0
         If n==1 then ans is 1^1
         and for n==0 and n==1, primesfactors[0] and expos[0] give answers (0th index)
         */
+        primesfactors[0] = 0;
+        expos[0] = 0;
+        allfactors[0] = 0;
         return;
     }
 
