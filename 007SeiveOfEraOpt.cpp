@@ -2,7 +2,7 @@
 #include<vector>
 using namespace std;
 
-#define MAX_LIMIT 1000
+const int MAX_LIMIT =  100000;
 // creating the seive array
 // initially marking all as being 'prime'
 vector<bool> isPrimes(MAX_LIMIT + 1,  true);
