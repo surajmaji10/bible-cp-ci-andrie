@@ -4,15 +4,23 @@ using namespace std;
 const int PRIMES_FACTORS_LIMIT = 100;
 int primesfactors[PRIMES_FACTORS_LIMIT + 1] {1};
 int allfactors[PRIMES_FACTORS_LIMIT + 1] {1};
-int expos[PRIMES_FACTORS_LIMIT + 1] {0};
+int expos[PRIMES_FACTORS_LIMIT + 1] {1};
 int NUM_FACTORS = 0;
 int TOTAL_FACTORS = 0;
 void primeFactorization(int n, int primesfactors[], int expos[]){ // workd for n > 1
     /*initial values*/
     NUM_FACTORS = 0;
     TOTAL_FACTORS = 0;
-    primesfactors[0] = 1;
-    expos[0] = 0;
+    primesfactors[0] = (n==0)?0:1;
+    expos[0] = 1;
+    if(n == 0){
+        /*
+        If n==0 then ans is 0^1
+        If n==1 then ans is 1^1
+        and for n==0 and n==1, primesfactors[0] and expos[0] give answers (0th index)
+        */
+        return;
+    }
 
     int factors = 0;
     while(n % 2 == 0){
@@ -43,7 +51,7 @@ void primeFactorization(int n, int primesfactors[], int expos[]){ // workd for n
         }
         div += 2;
     }
-
+    /*this is needed here as div may stop at sqrt(N)*/
     if(n > 1){ /*n was a prime itself*/
             TOTAL_FACTORS++;
             allfactors[TOTAL_FACTORS] = n;
